@@ -37,3 +37,72 @@
 </body>
 </html>
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Active on Scroll */
+.navbar.scrolled {
+    background-color: rgba(0, 123, 255, 0.9);
+}
+
+.navbar.scrolled .menu a {
+    color: #fff;
+}
+
+
+
+const navbar = document.querySelector('.navbar');
+
+// Add an event listener for scroll events
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
